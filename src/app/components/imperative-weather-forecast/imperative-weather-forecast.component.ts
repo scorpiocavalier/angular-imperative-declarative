@@ -12,7 +12,7 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./imperative-weather-forecast.component.css'],
 })
 export class ImperativeWeatherForecastComponent implements OnInit, OnDestroy {
-  cityField: FormControl = new FormControl('Montreal');
+  cityField: FormControl = new FormControl('');
   forecasts: WeatherForecast[] = [];
   location: AutocompleteLocation;
 
