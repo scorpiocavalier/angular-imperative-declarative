@@ -9,14 +9,13 @@
         matInput
         placeholder="Search"
         autocomplete="off"
-        [(ngModel)]="filter"
-        (ngModelChange)="filterList()"
+        [formControl]="searchField"
       />
       <mat-icon
         matSuffix
         class="cursor-pointer"
-        *ngIf="filter.length"
-        (click)="filter = ''; filterList()"
+        *ngIf="searchField.value"
+        (click)="searchField.setValue('')"
         >cancel</mat-icon
       >
     </mat-form-field>
