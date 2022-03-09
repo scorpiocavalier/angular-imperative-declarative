@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-title>Declarative</mat-card-title>
+
+  <mat-card-content>
+    <mat-form-field class="w-full" appearance="outline">
+      <mat-label>Search</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input
+        matInput
+        placeholder="Search"
+        autocomplete="off"
+        [formControl]="searchField"
+      />
+      <mat-icon
+        matSuffix
+        class="cursor-pointer"
+        (click)="searchField.setValue('')"
+        >cancel</mat-icon
+      >
+    </mat-form-field>
+
+    <mat-list class="divide-y">
+      <mat-list-item *ngFor="let client of filteredClients$ | async">
+        {{ client.firstName }} {{ client.lastName }}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

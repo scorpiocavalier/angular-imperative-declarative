@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImperativeSearchFilterComponent } from './imperative-search-filter.component';
+import { DeclarativeSearchFilterComponent } from './declarative-search-filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -9,7 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [ImperativeSearchFilterComponent],
+  declarations: [DeclarativeSearchFilterComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,6 +20,6 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     MatIconModule,
   ],
-  exports: [ImperativeSearchFilterComponent],
+  exports: [DeclarativeSearchFilterComponent],
 })
-export class ImperativeSearchFilterModule {}
+export class DeclarativeSearchFilterModule {}

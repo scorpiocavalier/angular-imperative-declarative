@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Subject, takeUntil } from 'rxjs';
+import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client.service';
 
@@ -28,19 +28,18 @@ export class ImperativeSearchFilterComponent implements OnInit, OnDestroy {
       });
 
     this.searchField.valueChanges
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntil(this.destroy$), debounceTime(100))
       .subscribe((searchTerm: string) => {
-        this.filteredClients = this.clients.filter(
-          ({ firstName, lastName }) => {
-            const fullName = [firstName, lastName].join(' ');
-            return (
-              searchTerm === '' ||
-              [fullName, firstName, lastName].some((name) =>
-                name.toLowerCase().includes(searchTerm.toLowerCase())
-              )
-            );
-          }
-        );
+        this.filteredClients =
+          searchTerm === ''
+            ? this.clients
+            : this.clients.filter(({ firstName, lastName }) => {
+                const fullName = [firstName, lastName].join(' ');
+
+                return [firstName, lastName, fullName].some((name) =>
+                  name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+              });
       });
   }
 
