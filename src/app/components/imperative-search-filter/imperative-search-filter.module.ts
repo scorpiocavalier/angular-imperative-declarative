@@ -5,6 +5,9 @@ import { ImperativeSearchFilterComponent } from './imperative-search-filter.comp
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [ImperativeSearchFilterComponent],
@@ -14,6 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
   ],
   exports: [ImperativeSearchFilterComponent],
 })
