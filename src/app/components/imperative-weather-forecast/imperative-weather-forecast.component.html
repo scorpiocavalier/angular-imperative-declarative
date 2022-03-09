@@ -22,7 +22,7 @@
         <mat-card class="mat-elevation-z2" *ngFor="let forecast of forecasts">
           <mat-card-title
             class="sm:text-lg md:text-base lg:text-lg text-center"
-            >{{ getDayFromDate(forecast) }}</mat-card-title
+            >{{ forecast.date | date: "EEEE" }}</mat-card-title
           >
 
           <mat-card-content>

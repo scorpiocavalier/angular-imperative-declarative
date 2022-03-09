@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import * as dayjs from 'dayjs';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { Forecast, WeatherForecast } from 'src/app/models/forecast';
 import { AutocompleteLocation } from 'src/app/models/location';
@@ -46,9 +45,5 @@ export class ImperativeWeatherForecastComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
-  }
-
-  getDayFromDate(forecast: WeatherForecast) {
-    return dayjs(forecast.date).format('dddd');
   }
 }
