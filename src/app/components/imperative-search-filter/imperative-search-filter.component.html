@@ -1,7 +1,7 @@
 <mat-card>
-  <mat-card-title class="sm:text-lg lg:text-2xl"
-    >Imperative Search Filter</mat-card-title
-  >
+  <mat-card-title class="sm:text-lg lg:text-2xl">
+    Imperative Search Filter
+  </mat-card-title>
 
   <mat-card-content>
     <mat-form-field class="w-full" appearance="outline">
@@ -11,15 +11,14 @@
         matInput
         placeholder="Search"
         autocomplete="off"
-        [formControl]="searchField"
-      />
+        [formControl]="searchField" />
       <mat-icon
         matSuffix
         class="cursor-pointer"
         *ngIf="searchField.value"
-        (click)="searchField.setValue('')"
-        >cancel</mat-icon
-      >
+        (click)="searchField.setValue('')">
+        cancel
+      </mat-icon>
     </mat-form-field>
 
     <mat-list class="divide-y">

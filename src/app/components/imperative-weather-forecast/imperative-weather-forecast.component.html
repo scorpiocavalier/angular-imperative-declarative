@@ -1,7 +1,7 @@
 <mat-card>
-  <mat-card-title class="sm:text-lg lg:text-2xl"
-    >Imperative Weather Forecast</mat-card-title
-  >
+  <mat-card-title class="sm:text-lg lg:text-2xl">
+    Imperative Weather Forecast
+  </mat-card-title>
 
   <mat-card-content>
     <div class="flex flex-col">
@@ -13,26 +13,24 @@
           matSuffix
           class="cursor-pointer"
           *ngIf="cityField.value"
-          (click)="cityField.setValue('')"
-          >cancel</mat-icon
-        >
+          (click)="cityField.setValue('')">
+          cancel
+        </mat-icon>
       </mat-form-field>
 
       <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
         <mat-card class="mat-elevation-z2" *ngFor="let forecast of forecasts">
           <mat-card-title
-            class="sm:text-lg md:text-base lg:text-lg text-center"
-            >{{ forecast.date | date: "EEEE" }}</mat-card-title
-          >
+            class="sm:text-lg md:text-base lg:text-lg text-center">
+            {{ forecast.date | date: "EEEE" }}
+          </mat-card-title>
 
           <mat-card-content>
             <div
-              class="flex gap-1 sm:flex-row md:flex-col lg:flex-row items-center justify-center"
-            >
+              class="flex gap-1 sm:flex-row md:flex-col lg:flex-row items-center justify-center">
               <img [src]="forecast.day.condition.icon" />
               <div
-                class="flex sm:flex-col sm:items-end md:flex-row md:gap-1 md:justify-center lg:flex-col lg:items-end w-max text-base"
-              >
+                class="flex sm:flex-col sm:items-end md:flex-row md:gap-1 md:justify-center lg:flex-col lg:items-end w-max text-base">
                 <div>{{ forecast.day.maxtemp_c | number: "1.0-0" }}° C</div>
                 <div>{{ forecast.day.mintemp_c | number: "1.0-0" }}° C</div>
               </div>
@@ -45,8 +43,8 @@
 
   <mat-card-footer class="text-right text-xs pr-4 pb-4">
     Powered by
-    <a href="https://www.weatherapi.com/" title="Free Weather API"
-      >WeatherAPI.com</a
-    >
+    <a href="https://www.weatherapi.com/" title="Free Weather API">
+      WeatherAPI.com
+    </a>
   </mat-card-footer>
 </mat-card>
